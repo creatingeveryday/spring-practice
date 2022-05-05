@@ -15,10 +15,10 @@ public class ApplicationContextInfoTest {
     void findAllBean(){
         String[] beanDefinitionNames =  ac.getBeanDefinitionNames();
 
-        for (String beanDefinitionName : beanDefinitionNames) {
-           Object bean = ac.getBean(beanDefinitionName);
-            System.out.println("name = " + beanDefinitionName+" object = "+ bean);
-        }
+//        for (String beanDefinitionName : beanDefinitionNames) {
+//           Object bean = ac.getBean(beanDefinitionName);
+//            System.out.println("name = " + beanDefinitionName+" object = "+ bean);
+//        }
 
     }
 
