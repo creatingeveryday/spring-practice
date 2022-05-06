@@ -19,7 +19,7 @@ import org.springframework.context.annotation.Configuration;
  * 중복 해소 및 애플리케이션에서 역할에 따른 구현이 잘보이게 리팩터링(큰 그림이 한눈에 보이게)
  *
  * ApplicationContext : 스프링 컨테이너로 객체를 생성하고 DI 관리
- * @Bean 메서드를 모두 호출해서 반환된 객체를 스프링 컨테이너에 등록. = 스프링 빈
+ * @Bean 메서드를 모두 호출해서 반환된 객체를 팩토리 메서드를 통해서 스프링 컨테이너에 등록. = 스프링 빈
  * 스프링 컨테이너 사용시 장점?
  */
 
