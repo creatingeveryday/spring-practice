@@ -14,3 +14,8 @@
   - 애플리케이션 이벤트 ApplicationEventPublisher : 이벤트를 발행하고 구독하는 모델을 편리하게 지원
   - 편리한 리소스 조회 ResourceLoader : 파일, 클래스, 패스 외부에서 리소스를 편리하게 조회
 - BeanDefinition Meta Data : 스프링은 다양한 형태의 설정 정보를 BeanDefinition으로 추상화해서 사용
+- Singleton
+  - Singleton Container
+  - 싱글톤 방식 사용시 주의할 점
+    - stateless로 설계할 것 (지역변수, 파라미터, ThreadLocal)
+    
