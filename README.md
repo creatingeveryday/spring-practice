@@ -6,7 +6,7 @@
 - 단위테스트
 - IoC(Inversion of Control) : 프로그램 제어의 흐름을 외부에서 통제하고 실행.
 - DI(Dependency Injection) : 의존관계 주입 - 런타임에 외부에서 구현 객체 인스턴스 생성 후 클라이언트에 참조값을 전달해서 서버와 연결됨, DI 사용시 정적인 클래스 의존관계를 변경하지 않고, 동적인 객체 인스턴스 의존관계를 쉽게 변경 가능하다. 
-- DI 컨테이너(IoC 컨테이너) : 객체를 생성하고 관리하면서 의존관계를 연결해주는 역할을 하는 것을 말한다. (object factory)
+- DI 컨테이너(IoC 컨테이너) : 객체를 생성하고 관리하면서 의존관계를 연결해주는 역할을 함. (object factory)
 - BeanFactory
 - ApplicationContext : 추가로 개발시 수 많은 부가 기능 제공
   - 메시지소스를 활용한 국제화 기능 MessageSource
@@ -18,4 +18,6 @@
   - Singleton Container
   - 싱글톤 방식 사용시 주의할 점
     - stateless로 설계할 것 (지역변수, 파라미터, ThreadLocal)
+- @Configuration은 스프링 빈이 싱글톤이 되도록 보장해준다. 기존 설정 클래스를 바이트코드 조작 라이브러리(CGLIB)를 이용해서 조작 후 조작된 클래스로 스프링 빈으로 등록한다.
+
     
