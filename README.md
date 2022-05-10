@@ -19,5 +19,20 @@
   - 싱글톤 방식 사용시 주의할 점
     - stateless로 설계할 것 (지역변수, 파라미터, ThreadLocal)
 - @Configuration은 스프링 빈이 싱글톤이 되도록 보장해준다. 기존 설정 클래스를 바이트코드 조작 라이브러리(CGLIB)를 이용해서 조작 후 조작된 클래스로 스프링 빈으로 등록한다.
+- Component Scan : @Component 붙은 클래스 모두 Scan하여 스프링 빈으로 등록(@Autowired로 의존관계 설정)
+  - 탐색 기본 시작 위치 : @ComponentScan이 붙은 설정 정보 클래스의 패키지
+  - @Controller 어노테이션에 @Component가 적용되어있다는 것을 어떻게 알 수 있나? : 스프링이 지원하는 기능 
+  - @Repository : 스프링 데이터 접근 계층으로 인식하고, 데이터 계층의 예외를 추상화된 스프링의 예외로 변환해주는 부가 기능이 있다.
+  - includeFilters, excludeFilters
+    - Filter Type Option
+      - ANNOTATION: 기본 값
+      - Assignable_TYPE : 지정한 타입과 자식 타입을 인식해서 동작함. 
+      - ASPECTJ : AspectJ패턴 사용
+      - REGEX : 정규 표현식
+      - CUSTOM : TypeFilter라는 인터페이스를 구현해서 처리
+  - 중복등록과 충돌
+    - 수동 빈과 자동 빈 중복 등록시 수동 빈이 자동 빈을 오버라이딩 해버리는데 결과적으로 운영하면서 잡기 어려운 애매한 버그가 생길 가능성이 높아진다고한다.
+    - 그래서 스프링부트 설정에서는 애초에 중복 등록하여 충돌 발생시 오류가 발생하도록 기본 값을 변경함.
+  
 
     
