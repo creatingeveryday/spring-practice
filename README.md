@@ -50,7 +50,11 @@
   - 수정자 주입 방식 사용시 단점
     - set메서드를 public으로 설정하게 되는데 변경하면 안되는 메서드까지 열어두는건 매우 위험하다.
     - 의존 관계 주입 실수로 누락시 컴파일 단계에서 체크되지 않고 오류 발생.
-  -  
+  - Lombok library
+    - intellij의 경우 의존성 추가 후 Lombok 플러그인 설치 및 annotation processer 설정을 켜줘야 한다. 
+    - Lombok은 java의 annotation processer 기능을 이용해서 컴파일 시점에 생성자 코드를 자동으로 생성해줌.
+    - annotation processing? 어노테이션을 스캔하고 컴파일 타임에 코드를 성, 수정, 검증한다. [intellij link](https://www.jetbrains.com/help/idea/annotation-processors-support.html)
+    - 
   
 
     
