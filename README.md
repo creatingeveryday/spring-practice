@@ -53,8 +53,14 @@
   - Lombok library
     - intellij의 경우 의존성 추가 후 Lombok 플러그인 설치 및 annotation processer 설정을 켜줘야 한다. 
     - Lombok은 java의 annotation processer 기능을 이용해서 컴파일 시점에 생성자 코드를 자동으로 생성해줌.
-    - annotation processing? 어노테이션을 스캔하고 컴파일 타임에 코드를 성, 수정, 검증한다. [intellij link](https://www.jetbrains.com/help/idea/annotation-processors-support.html)
-    - 
+    - annotation processing? 어노테이션을 스캔하고 컴파일 타임에 코드를 생성, 수정, 검증한다. [intellij link](https://www.jetbrains.com/help/idea/annotation-processors-support.html)
+  - 조회된 빈이 2개 이상일 때... 조회된 빈이 모두 필요한 빈이라면..??
+    - @Autowired는 타입으로 조회! 그런데 같은 타입의 조회된 빈이 2개 이상일 때 
+      - @Autowired 필드명 및 파라미터명으로 빈 이름 매칭 
+      - @Quilifier 사용해 추가 구분자를 붙여주어 매칭(빈 이름이 변경되지는 않음), @Quilifier 끼리 매칭하는 방식으로 명확하게 사용할 것. 직접 빈 등록할때도 사용 가능
+      - @Primary 붙은 빈이 우선권을 가진다.  깔끔하고 실무에서 많이 사용한다고 한다. 참고로 수동으로 직접 적용해야하는 @Quilifier가 우선 순위가 높다. 
+      - 
+      - 
   
 
     
