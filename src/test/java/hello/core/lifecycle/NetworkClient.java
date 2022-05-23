@@ -1,13 +1,19 @@
 package hello.core.lifecycle;
 
-public class NetworkClient {
+import org.springframework.beans.factory.DisposableBean;
+import org.springframework.beans.factory.InitializingBean;
+
+//인터페이스 IntializingBean, DisposableBean
+public class NetworkClient implements InitializingBean, DisposableBean {
 
     private String url;
 
     public NetworkClient() {
         System.out.println("생성자호출 url="+url);
-        connect();
-        call("초기화 연결 메시지");
+
+//        생성 작업과 초기화 작업 분리
+//        connect();
+//        call("초기화 연결 메시지!!");
 
     }
 
@@ -25,10 +31,21 @@ public class NetworkClient {
     }
 
     public void disconnect(){
-        System.out.println("close"+ url);
+        System.out.println("close :"+ url);
     }
 
 
+    // 인터페이스 IntializingBean, DisposableBean
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("NetworkClient.afterPropertiesSet");
+        connect();
+        call("초기화 연결 메시지!!");
+    }
 
-
+    @Override
+    public void destroy() throws Exception {
+        System.out.println("NetworkClient.destroy");
+        disconnect();
+    }
 }

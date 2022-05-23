@@ -21,7 +21,7 @@ public class BeanLifeCycleTest {
         @Bean
         public NetworkClient networkClient() {
             NetworkClient networkClient = new NetworkClient();
-            networkClient.setUrl("http://hello-core.co.kr");
+            networkClient.setUrl("http://hello-core.co.kr"); //객체 생성후 setter 방식으로 세팅.
             return networkClient;
         }
     }
