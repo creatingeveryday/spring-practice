@@ -14,13 +14,15 @@ import javax.servlet.http.HttpServletRequest;
 public class LogDemoController {
 
     private final LogDemoService logDemoService;
-    private final ObjectProvider<MyLogger> myLoggerProvider;   //스프링 시작 단계에서는 request가 들어오지 않았기 때문에 빈 생성되지 않았음. 오류 발생. 프로바이더가 필요하다!
+    private final MyLogger myLogger;
 
     @RequestMapping("log-demo")
     @ResponseBody
     public String logDemo(HttpServletRequest request) throws InterruptedException {
         String requestUrl = request.getRequestURL().toString();
-        MyLogger myLogger = myLoggerProvider.getObject();
+
+        System.out.println("myLogger = " + myLogger.getClass()); //class hello.core.common.MyLogger$$EnhancerBySpringCGLIB$$5b29af4b
+
         myLogger.setRequestUrl(requestUrl);
         myLogger.log("controller test");
 
